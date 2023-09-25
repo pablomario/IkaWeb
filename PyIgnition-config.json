@@ -1,0 +1,9 @@
+{
+    "app-name": "Ikawe Biblioteca",
+    "app-description" : "Biblioteca de libros electrónicos",
+    "app-entrypoint": "main.py",
+    "app-port" : "",
+    "app-version" : "0.0.1",
+    "app-author" : "https://github.com/pablomario",
+    "app-other": ""
+}

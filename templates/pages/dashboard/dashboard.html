@@ -1,0 +1,24 @@
+
+{% include "components/head.html" %}
+{% include "components/navbar.html" %}
+
+<div class="container-fluid ikake-jumbotron">
+    <div class="container text-center">
+        <h1 class="display-5">HOLA 👋.</h1>
+    </div>
+</div>
+
+<div class="container-fluid racoon-library">
+    <div class="container p-2 racoon-container-library">
+        {% include "components/searcher.html" %}
+        <div class="row p-4">
+            {% for current_book in books %}
+                {% set book = current_book %}
+                {% include "components/book_card.html" %}
+            {% endfor %}
+        </div>
+        {% include "components/pagination.html" %}
+    </div>
+</div>
+
+{% include "components/footer.html" %}

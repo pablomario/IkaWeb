@@ -1,0 +1,56 @@
+{% include "components/head.html" %}
+{% include "components/navbar.html" %}
+
+<div class="container-fluid ikake-jumbotron">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="ikawe-btn-link-light" href="{{ url_for('main') | safe }}">Inicio</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a class="ikawe-btn-link-light" href="{{ url_for('dashboard_bp.page_dashboard') | safe }}">Librería</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{ book.book }}</li>
+          </ol>
+        </nav>
+    </div>
+    <div class="container text-center">
+        <h1 class="display-5"> {{ book.book }}.</h1>
+    </div>
+</div>
+
+<div class="container-fluid racoon-library">
+    <div class="container p-2 racoon-container-library">
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <div class="col-9 p-4">
+                <p>
+                    <span class="badge text-bg-primary">{{ book.author }}</span>
+                    <span class="badge text-bg-success">{{ book.theme }}</span>
+                    <span class="badge text-bg-warning">{{ book.year }}</span>
+                </p>
+                <h2 class="border-bottom p-2">{{ book.book }}</h2>
+                <p>{{ book.summary }}</p>
+            </div>
+            <div class="col-3 p-4 text-center">
+                {% if book.cover %}
+                <img src="data:image/png;base64, {{ book.cover }}"
+                        width="270" class="" alt="{{ book.book }}">
+                {% else %}
+                    <img src="{{ url_for('static', filename='images/no_cover.png') }}"
+                         width="270" class="" alt="{{ book.book }}">
+                {% endif %}
+            </div>
+        </div>
+        <div class="row p-3">
+            <p><a href="{{ book.ref_download }}" class="btn btn-lg racoon-btn-success">Descargar libro (.mobi)</a></p>
+        </div>
+    </div>
+</div>
+
+
+{% include "components/footer.html" %}
