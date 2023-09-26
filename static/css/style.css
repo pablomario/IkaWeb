@@ -23,6 +23,7 @@
 
 .ikawe-navbar-light {
     background-color: #ffffffa1!important;
+    backdrop-filter: blur(3px);
 }
 
 .racoon-index-login {
@@ -31,15 +32,26 @@
 
 .ikake-jumbotron {
     background: #023047;
-    padding-top: 50px;
-    padding-bottom: 25px;
+    height: 400px;
     color: #fff;
 } 
 
 .ikake-jumbotron h1 {
     font-weight: bolder;
-    margin: 50px;
-    min-height: 200px;
+    margin-top: -100px;
+}
+
+.ikake-jumbotron-title {
+    height: 400px;
+    margin-top: -400px;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    padding-top: 50px;
+}
+
+.ikake-jumbotron-content {
+    position: relative;
+    z-index: 99;
 }
 
 .ikake-jumbotron-books {
@@ -150,4 +162,11 @@
     cursor: pointer;
     color:  rgb(148, 255, 196);
     text-decoration: underline;
+}
+
+.ikawe-badge {
+    background-color: rgb(148, 255, 196);
+    color: black;
+    border-radius: 0%;
+    font-weight: inherit;
 }

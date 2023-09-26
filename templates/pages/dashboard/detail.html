@@ -1,8 +1,15 @@
 {% include "components/head.html" %}
 {% include "components/navbar.html" %}
 
-<div class="container-fluid ikake-jumbotron">
-    <div class="container">
+<div class="container-fluid  ikake-jumbotron"
+     style="background-image: url('data:image/png;base64, {{ book.cover }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;">
+</div>
+<div class="container-fluid ikake-jumbotron-title"  style="z-index: 1">
+    <div class="container" style="z-index: 10">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -16,25 +23,25 @@
         </nav>
     </div>
     <div class="container text-center">
-        <h1 class="display-5"> {{ book.book }}.</h1>
+        <h1 class="display-5">{{book.book}}.</h1>
     </div>
 </div>
 
-<div class="container-fluid racoon-library">
+<div class="container-fluid ikake-jumbotron-content">
     <div class="container p-2 racoon-container-library">
         <div class="row">
 
         </div>
-
         <div class="row">
             <div class="col-9 p-4">
-                <p>
-                    <span class="badge text-bg-primary">{{ book.author }}</span>
-                    <span class="badge text-bg-success">{{ book.theme }}</span>
-                    <span class="badge text-bg-warning">{{ book.year }}</span>
+                <h1 class="border-bottom p-2">{{ book.book }}</h1>
+                <p class="p-2">
+                    <span class="badge ikawe-badge">{{ book.author }}</span>
+                    <span class="badge ikawe-badge">{{ book.theme }}</span>
+                    <span class="badge ikawe-badge">{{ book.year }}</span>
                 </p>
-                <h2 class="border-bottom p-2">{{ book.book }}</h2>
-                <p>{{ book.summary }}</p>
+
+                <p class="p-2">{{ book.summary }}</p>
             </div>
             <div class="col-3 p-4 text-center">
                 {% if book.cover %}
