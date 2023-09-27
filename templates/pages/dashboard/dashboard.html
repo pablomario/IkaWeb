@@ -12,10 +12,20 @@
     <div class="container p-2 racoon-container-library">
         {% include "components/searcher.html" %}
         <div class="row p-4">
-            {% for current_book in books %}
-                {% set book = current_book %}
-                {% include "components/book_card.html" %}
-            {% endfor %}
+            {% if books %}
+                {% for current_book in books %}
+                    {% set book = current_book %}
+                    {% include "components/book_card.html" %}
+                {% endfor %}
+            {% else %}
+            <div class="text-center">
+                <p class="text-muted">
+                    <img src="{{ url_for('static', filename='images/logos/ikawe-shape.png') }}"
+                        height="126" alt="">
+                </p>
+                <h2>Lo que estás buscando no está aqui...</h2>
+            </div>
+            {% endif %}
         </div>
         {% include "components/pagination.html" %}
     </div>
