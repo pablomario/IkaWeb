@@ -3,7 +3,7 @@ import pymongo
 from pymongo import MongoClient
 from bson import ObjectId
 from .decorators import require_login
-import math
+import math, re
 
 dashboard_bp = Blueprint('dashboard_bp', __name__)
 

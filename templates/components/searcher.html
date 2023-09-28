@@ -2,25 +2,15 @@
 
 <div class="bg-light p-3">
     <div class="container">
-        <div class="row">
-            <div class="col-9">
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Nombre de Libro, Autor...">
-                <datalist id="datalistOptions">
-                  <option value="San Francisco">
-                  <option value="New York">
-                  <option value="Seattle">
-                  <option value="Los Angeles">
-                  <option value="Chicago">
-                </datalist>
+        <form method="POST" action="{{ url_for('search_bp.search') }}">
+            <div class="row">
+                <div class="col-11">
+                    <input class="form-control" id="keywords" name="keywords" placeholder="Nombre de Libro, Autor...">
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn racoon-btn-success">Buscar</button>
+                </div>
             </div>
-            <div class="col-2">
-                <input class="form-control" type="number" id="anyo" placeholder="Año...">
-            </div>
-            <div class="col-1">
-                <a class="btn racoon-btn-success" href="#"> Buscar </a>
-            </div>
-
-        </div>
-
+        </form>
     </div>
 </div>

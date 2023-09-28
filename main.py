@@ -4,7 +4,7 @@ from blueprints.login import login_bp
 from blueprints.signup import signup_bp
 from blueprints.dashboard import dashboard_bp
 from blueprints.profile import profile_bp
-
+from blueprints.search import  search_bp
 
 # APP CONFIGURATION
 app = Flask(__name__)
@@ -14,6 +14,7 @@ app.secret_key = 'secret_123*'
 app.register_blueprint(login_bp, url_prefix='/login')
 app.register_blueprint(signup_bp, url_prefix='/signup')
 app.register_blueprint(dashboard_bp, url_prefix='/dashboard')
+app.register_blueprint(search_bp, url_prefix='/search')
 app.register_blueprint(profile_bp, url_prefix='/profile')
 
 total_books = None
