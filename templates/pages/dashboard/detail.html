@@ -29,6 +29,9 @@
 
 <div class="container-fluid ikake-jumbotron-content">
     <div class="container p-2 racoon-container-library">
+        {% if session['user_logged']['rol'] == 'admin' %}
+            {% include "components/admin/admin-bar.html" %}
+        {% endif %}
         <div class="row">
             <div class="col-12 p-4">
                 <h1 class="border-bottom p-2">{{ book.book }}</h1>

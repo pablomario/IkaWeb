@@ -21,9 +21,10 @@ def login():
             user_logged_data = {
                 'username': user_logged['username'],
                 'name': user_logged['name'],
-                'email': user_logged['email']
+                'email': user_logged['email'],
+                'rol': user_logged['rol']
             }
-            print(user_logged['avatar'])
+            session.clear()
             session['user_logged'] = user_logged_data
             return redirect(url_for('dashboard_bp.page_dashboard'))
         else:
