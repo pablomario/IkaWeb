@@ -54,7 +54,7 @@
                             {% endif %}
                         </p>
                         <p class="p-1">
-                            <a href="{{ book.ref_download }}"
+                            <a href="{{ url_for('dashboard_bp.download_file', filename=book.ref_binary, book_name=book.book) }}"
                                class="btn btn-lg btn-block racoon-btn-success">Descargar libro (.mobi)</a>
                         </p>
                     </div>

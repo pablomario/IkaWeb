@@ -1,10 +1,11 @@
-from flask import Flask, g, session, render_template, current_app
+from flask import Flask, g, session, render_template
 from pymongo import MongoClient
 from blueprints.login import login_bp
 from blueprints.signup import signup_bp
 from blueprints.dashboard import dashboard_bp
 from blueprints.profile import profile_bp
-from blueprints.search import  search_bp
+from blueprints.search import search_bp
+from blueprints.admin.editBook import edit_book_bp
 
 # APP CONFIGURATION
 app = Flask(__name__)
@@ -16,6 +17,8 @@ app.register_blueprint(signup_bp, url_prefix='/signup')
 app.register_blueprint(dashboard_bp, url_prefix='/dashboard')
 app.register_blueprint(search_bp, url_prefix='/search')
 app.register_blueprint(profile_bp, url_prefix='/profile')
+app.register_blueprint(edit_book_bp, url_prefix='/admin/edit')
+
 
 total_books = None
 

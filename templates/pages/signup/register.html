@@ -15,6 +15,22 @@
                 </div>
                 <h2> New user? </h2>
 
+                {% if form_error %}
+                    <div class="row p-3">
+                        <div class="alert alert-danger" role="alert">
+                            {{ form_error }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if form_ok %}
+                    <div class="row p-3">
+                        <div class="alert alert-success" role="alert">
+                            {{ form_ok }}
+                        </div>
+                    </div>
+                {% endif %}
+
                 <div class="mb-3">
                     <label for="name" class="form-label">Real Name or not.</label>
                     <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">

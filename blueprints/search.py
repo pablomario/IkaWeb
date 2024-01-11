@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, g
-import pymongo
 from pymongo import MongoClient
 from bson import ObjectId
 from .decorators import require_login
@@ -11,6 +10,7 @@ search_bp = Blueprint('search_bp', __name__)
 client = MongoClient("mongodb://localhost:27017/")
 db = client["ikawe"]
 collection = db["books"]
+
 
 @search_bp.route('/search', methods=['GET', 'POST'])
 @require_login

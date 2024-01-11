@@ -1,9 +1,9 @@
-from flask import Blueprint, render_template, request, g
+import math
 import pymongo
-from pymongo import MongoClient
 from bson import ObjectId
+from flask import Blueprint, render_template, request, g, send_from_directory
+from pymongo import MongoClient
 from .decorators import require_login
-import math, re
 
 dashboard_bp = Blueprint('dashboard_bp', __name__)
 
@@ -51,3 +51,10 @@ def page_book(book_id):
         return render_template('pages/dashboard/detail.html', book=book)
     else:
         return render_template('404.html')
+
+
+@dashboard_bp.route('/detail/download/<filename>/<book_name>')
+@require_login
+def download_file(filename, book_name):
+    custom_name = book_name.replace(' ', '_') + '.mobi'
+    return send_from_directory('static/ebooks', filename, as_attachment=True, download_name=custom_name)
